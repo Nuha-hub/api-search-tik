@@ -23,7 +23,7 @@ def check(email):
 			return jsonify({"by":"@iiyiu","message":"Available In insta and Gmail","status":"good"})
 		else:
 			return jsonify({"by":"@iiyiu","message":"unAvailble","status":"bad"})
-	insta(email)
+	return insta(email)
 
 if __name__ == '__main__':
 	app.run(debug=True)
