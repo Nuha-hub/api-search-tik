@@ -13,7 +13,7 @@ def check(email):
 		email=f"{email}@gmail.com"
 		response=requests.get(f"https://check-instagram-5574ad333942.herokuapp.com/check_email/{email}").json()
 		if "html" in response:
-			gmail(email)
+			return gmail(email)
 		else:
 			return jsonify({"by":"@iiyiu","message":"unAvailble","status":"bad"})
 	
