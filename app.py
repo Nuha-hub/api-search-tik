@@ -15,14 +15,14 @@ def check(email):
 		if "html" in response:
 			gmail(email)
 		else:
-			print({"by":"@iiyiu","message":"unAvailble","status":"bad"})
+			return jsonify({"by":"@iiyiu","message":"unAvailble","status":"bad"})
 	
 	def gmail(email):
 		req=requests.get(f"https://api-check-gmail-db235a1a3749.herokuapp.com/check_email/email={email}").json()['status']
 		if 'good' in req:
-			print({"by":"@iiyiu","message":"Available In insta and Gmail","status":"good"})
+			return jsonify({"by":"@iiyiu","message":"Available In insta and Gmail","status":"good"})
 		else:
-			print({"by":"@iiyiu","message":"unAvailble","status":"bad"})
+			return jsonify({"by":"@iiyiu","message":"unAvailble","status":"bad"})
 	insta(email)
 
 if __name__ == '__main__':
