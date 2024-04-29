@@ -2,11 +2,14 @@ from flask import Flask, request, jsonify
 from user_agent import generate_user_agent
 import requests
 from uuid import uuid4
+from flask import Flask, jsonify, request
+import requests
 
 app = Flask(__name__)
 
-@app.route('/info/<user>', methods=['GET'])
-def get_instagram_info(user):
+@app.route('/check_email/<email>', methods=['GET'])
+def get_instagram_info(email):
+        user=email
         he = {
             'accept': '*/*',
             'accept-encoding': 'gzip, deflate, br',
@@ -79,5 +82,10 @@ def get_instagram_info(user):
 
 
 
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
