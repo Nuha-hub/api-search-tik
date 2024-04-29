@@ -5,7 +5,7 @@ from uuid import uuid4
 
 app = Flask(__name__)
 
-@app.route('/instagram_info/<user>', methods=['GET'])
+@app.route('/info/<user>', methods=['GET'])
 def get_instagram_info(user):
         he = {
             'accept': '*/*',
