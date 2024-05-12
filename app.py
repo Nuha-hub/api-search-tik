@@ -56,8 +56,13 @@ def cohange(username,sess):
 			return ({'username':username,'status':'Done','By':'@te9egram'})
 		else:
 			return ({'username':username,'status':'bad','By':'@te9egram'})
-	email,phone,name=getMe(sess)
-	return change(email=email,sess=sess,username=username,phone=phone,name=name)
+	try:
+		getMe(sess)
+		email,phone,name=getMe(sess)
+		return change(email=email,sess=sess,username=username,phone=phone,name=name)
+	except:
+		return 'bad session'
+	
 
 if __name__ == '__main__':
     app.run(debug=True)
